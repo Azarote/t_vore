@@ -1,0 +1,21 @@
+#connexion
+{
+	margin:auto;
+	border:2px solid black;
+	width:300px;
+	border-radius:4px;
+	padding:3px;
+	text-align:center;
+	margin-top:250px;
+
+}
+input
+{
+	border-radius:4px;
+	background-color:#BFBFBF;
+	border: 2px solid #646464;
+}
+#error
+{
+	color:red;
+}

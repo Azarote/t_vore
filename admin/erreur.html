@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="back.css">
+		<meta charset="UTF-8">
+	</head>
+<body>
+
+	<div id="connexion">
+		<table>
+			<form method="POST" action="connexion.php">
+				<tr>
+					<b id="error">Ces identifiants n'existent pas dans notre base de données, veuillez rééssayer : </b>
+				</tr>
+				<tr>
+					<td>Pseudo :</td><td><input type="text" name="pseudo"></td>
+				</tr>
+				<tr>
+					<td>Mot de passe : </td><td><input type="password" name="mdp"></td>
+				</tr>
+				<td>
+					<input type="submit" value="Se connecter">
+				</td>
+				<td align="right">
+					<a href="../index.php">Revenir à l'accueil</a>
+				</td>
+
+			</form>
+		</table>
+	</div>
+</body>
+</html>
