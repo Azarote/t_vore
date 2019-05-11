@@ -392,8 +392,8 @@ header.page5 .hover {
 
 .box img {
 	border: 3px solid #f4948b;
-	border-radius: 500px;
 	margin-bottom: 19px;
+	max-width: 350px;
 }
 
 .box .text1 {
@@ -466,6 +466,23 @@ header.page5 .hover {
 #page4 {
 	padding-top: 231px;
 	padding-bottom: 186px;
+}
+
+#page4 .box {
+	color: #fff;
+	background-color: #92608a;
+	border-color: #bf93b7;
+	padding: 22px 15px 27px;
+}
+
+#page4 .box img {
+	margin-bottom: 21px;
+	border-color: #bf93b7;
+	background-color: #334960;
+}
+
+#page4 .box .text1 {
+	margin-bottom: 16px;
 }
 
 #page4  h3 {
