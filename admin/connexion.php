@@ -6,7 +6,7 @@ session_start();
 $email=$_POST["email"];
 $mdp=$_POST["mdp"];
 
-//$mdp=md5($mdp);
+$mdp=md5($mdp);
 
 include("connect.inc.php");
 
