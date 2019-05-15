@@ -79,12 +79,6 @@ ul {
 	list-style: none;
 }
 
-ul.list{
-
-}
-
-
-
 a {
 	text-decoration: none;
 	color: inherit;
@@ -96,8 +90,8 @@ a {
 
 a:hover {
 	color: #334960;
-	
 }
+
 
 
 
@@ -250,26 +244,6 @@ border-color: #334960 transparent transparent transparent;
 	padding-bottom: 191px;
 }
 
-header.page1 .men .hover{
-	top: 0;
-}
-
-header.page2 .men1 .hover{
-	top: 0;
-}
-
-header.page3 .men2 .hover{
-	top: 0;
-}
-
-header.page4 .men3 .hover{
-	top: 0;
-}
-
-header.page5 .men4 .hover{
-	top: 0;
-}
-
 #page2 {
 	background-color: #f17c72;
 	padding-top: 230px;
@@ -390,6 +364,11 @@ header.page5 .hover {
 	border-bottom-width: 4px;
 }
 
+.box:hover {
+	transform: scale(0.9,0.9);
+	transition: 1s;
+}
+
 .box img {
 	border: 3px solid #f4948b;
 	margin-bottom: 19px;
@@ -463,6 +442,10 @@ header.page5 .hover {
 	margin-bottom: 16px;
 }
 
+#page3 .box:hover {
+	color: #334960;
+}
+
 #page4 {
 	padding-top: 231px;
 	padding-bottom: 186px;
@@ -483,6 +466,10 @@ header.page5 .hover {
 
 #page4 .box .text1 {
 	margin-bottom: 16px;
+}
+
+#page4 .box:hover {
+	color: #334960;
 }
 
 #page4  h3 {
@@ -584,9 +571,6 @@ address dd span {
 
 footer {
 	display: block;
-}
-
-footer {
 }
 
 footer a:hover {
