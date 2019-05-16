@@ -19,11 +19,14 @@ if ( $mdp1 == $mdp2 )
 {
 $req="insert into client (NomClient, PrenomClient, adresseclient, CpClient, Villeclient, TelClient, MailClient, MdpClient) values ('$nom', '$prenom', '$adresse', '$cp', '$ville', '$tel', '$mail', '$mdp2')";
 mysql_query($req) or die ("erreur".mysql_error());
-header("location:ins_confirmation.php");
+
+echo '<meta http-equiv="refresh" content="0; URL=ins_confirmation.php">';
+//header("location:ins_confirmation.php");
 }
 else
 {
-header("location:index.php");
+echo '<meta http-equiv="refresh" content="0; URL=index.php">';
+//header("location:index.php");
 }
 
 

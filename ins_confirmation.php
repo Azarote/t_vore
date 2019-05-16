@@ -13,10 +13,6 @@
 
 	<header></header>
 	
-	<nav>
-			<?php include("nav.html"); ?>
-			
-	</nav>
 	<section>
 	<p align="center">Vous vous êtes bien inscrit, connectez vous <a href="compte.php"> ici</a></p>
 	</section>
