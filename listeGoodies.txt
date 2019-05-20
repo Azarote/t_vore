@@ -1,0 +1,45 @@
+Hommes : 
+•bomb
+•dev
+•majo
+•mees
+•patro
+•rel
+•docteur
+•donut
+•friends
+•joker
+•nerd
+•surf
+•lotr
+•chauve
+
+
+
+Femmes :
+•can
+•cor
+•licorne
+•mort
+•wonder
+•dragon
+•hip
+•zombi
+•singe
+•crane
+•feed
+•link
+•wasnt
+
+
+Goodies :
+
+•bonet
+•coussin
+•mug
+•parapluie
+•sac
+•sacSport
+•sacTotoro
+•tapis
+

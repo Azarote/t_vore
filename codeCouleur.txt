@@ -1,0 +1,12 @@
+Noir=1
+Blanc=2
+Gris=3
+Rouge=4
+Bleu=5
+Vert=6
+Jaune=7
+Kaki=8
+Marron=9
+Cyan=10
+Violet=11
+
