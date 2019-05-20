@@ -37,19 +37,24 @@
 		</header>
 
 	<?php
-	if (isset($_POST['dev']))
+	if (isset($_GET['num']))
 	{
-	$num=$_POST['NumTshirt'];
-	$nom=$_POST['nomtshirt']; 
+	$num=$_GET['num'];
+	
+	$db=mysql_connect("localhost","root","toor") or die("erreur de connection".mysql_error());		/*connection au serveur MySQL*/
+	mysql_select_db("TVORE",$db) or die("Erreur de connection à la base T-VORE");		/*ouverture de la base TVORE*/
+	$resultat = mysql_query("SELECT nomtshirt, prix, numcouleur, numtaille, photo, stock FROM TSHIRT WHERE NumTshirt=$num");
+	while ($ligne=mysql_fetch_assoc($resultat)) 
+	{
+		echo $ligne["nomtshirt"];
+	}
+				
+/*	$nom=$_POST['nomtshirt']; 
 	$prix=$_POST['prix'];
 	$couleur=$_POST['numcouleur'];
 	$taille=$_POST['numtaille'];
 	$photo=$_POST['photo'];
 	$stock=$_POST['stock'];
-	}
-	$db=mysql_connect("localhost","root","toor") or die("erreur de connection".mysql_error());		/*connection au serveur MySQL*/
-	mysql_select_db("TVORE",$db) or die("Erreur de connection à la base T-VORE");		/*ouverture de la base TVORE*/
-	$nom = mysql_query("SELECT nomtshirt FROM TSHIRT WHERE NumTshirt=$num");
 		
 		echo"<div id='page2' class='content'>
 			<div class='container_12'>
@@ -63,8 +68,9 @@
 
 			</div>
 		</div>";
-		mysql_close($db) /*fermeture de MySQL*/
-
+*/
+		mysql_close($db); /*fermeture de MySQL*/
+    }
 ?>
 		
 
