@@ -56,7 +56,7 @@
 	$photo=$_POST['photo'];
 	$stock=$_POST['stock'];
 		
-		echo"<div id='page2' class='content'>
+		*/echo"<div id='page2' class='content'>
 			<div class='container_12'>
 				<div class='grid_12'>
 					<div class='slogan'>
@@ -68,7 +68,7 @@
 
 			</div>
 		</div>";
-*/
+
 		mysql_close($db); /*fermeture de MySQL*/
     }
 ?>
