@@ -22,7 +22,7 @@
 							<ul class="sf-menu">
 								<li class="current men"><a  href="index.html">Accueil</a> <strong class="hover"></strong></li>
 								<li class="men1"><a  href="index.html #page3">À propos</a><strong class="hover"></strong></li>
-								<li class="men2"><a  href="boutique.html">Boutique</a> <strong class="hover"></strong></li>
+								<li class="men2"><a  href="boutique.php">Boutique</a> <strong class="hover"></strong></li>
 								<li class="men3"><a  href="#">Connection</a> <strong class="hover"></strong></li>
 								<li class="men4"><a  href="index.html #page4">Nous Contacter</a> <strong class="hover"></strong></li>
 								<li class="men5"><a  href="panier.html">Votre Panier</a> <strong class="hover"></strong></li>
@@ -56,7 +56,7 @@
 	$photo=$_POST['photo'];
 	$stock=$_POST['stock'];
 		
-		*/echo"<div id='page2' class='content'>
+		echo"<div id='page2' class='content'>
 			<div class='container_12'>
 				<div class='grid_12'>
 					<div class='slogan'>

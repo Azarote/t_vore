@@ -52,7 +52,7 @@
 				$db=mysql_connect("localhost","root","toor") or die("erreur de connexion serveur");
 				mysql_select_db("TVORE",$db) or die("erreur de connexion bdd");
 
-				$requete='SELECT NumTshirt, nomtshirt, prix, photo FROM TSHIRT'or die("erreur requete");
+				$requete='SELECT NumTshirt, nomtshirt, prix, photo FROM TSHIRT WHERE numsexe=1'or die("erreur requete");
 				$resultat=mysql_query($requete);
 				while ($ligne=mysql_fetch_assoc($resultat)) 
 				{
@@ -62,7 +62,7 @@
 		 			<div class="box maxheight">
 		 				'.$ligne["photo"].'
 		 				<div class="text1">'.$ligne["nomtshirt"].'</div>'.$ligne["prix"].'
-		 			</div>
+		 			€</div>
 		 		</div></a>
 		 	';
 }
@@ -78,104 +78,27 @@
 						<h3>T-shirts pour Femmes</h3>
 					</div>
 				</div>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/licorneVert/licorneVert.jpg" alt="">
-						<div class="text1">T-shirt Licorne</div>24,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/mortRouge/mortRouge.jpg" alt="">
-						<div class="text1">T-shirt Blanche Neige Rock</div>26,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/zombieRouge/zombieRouge.jpg" alt="">
-						<div class="text1">T-shirt Zombie</div>19,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/wonderBleu/wonderBleu2.jpg" alt="">
-						<div class="text1">T-shirt Wonder Woman</div>24,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/licorneVert/licorneVert.jpg" alt="">
-						<div class="text1">T-shirt Licorne</div>24,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/mortRouge/mortRouge.jpg" alt="">
-						<div class="text1">T-shirt Blanche Neige Rock</div>26,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/zombieRouge/zombieRouge.jpg" alt="">
-						<div class="text1">T-shirt Zombie</div>19,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/wonderBleu/wonderBleu2.jpg" alt="">
-						<div class="text1">T-shirt Wonder Woman</div>24,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/licorneVert/licorneVert.jpg" alt="">
-						<div class="text1">T-shirt Licorne</div>24,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/mortRouge/mortRouge.jpg" alt="">
-						<div class="text1">T-shirt Blanche Neige Rock</div>26,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/zombieRouge/zombieRouge.jpg" alt="">
-						<div class="text1">T-shirt Zombie</div>19,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/wonderBleu/wonderBleu2.jpg" alt="">
-						<div class="text1">T-shirt Wonder Woman</div>24,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/licorneVert/licorneVert.jpg" alt="">
-						<div class="text1">T-shirt Licorne</div>24,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/mortRouge/mortRouge.jpg" alt="">
-						<div class="text1">T-shirt Blanche Neige Rock</div>26,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/zombieRouge/zombieRouge.jpg" alt="">
-						<div class="text1">T-shirt Zombie</div>19,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/wonderBleu/wonderBleu2.jpg" alt="">
-						<div class="text1">T-shirt Wonder Woman</div>24,99€
-					</div>
-				</div></a>
-			</div>
-		</div>
+								<?php
+
+				$db=mysql_connect("localhost","root","toor") or die("erreur de connexion serveur");
+				mysql_select_db("TVORE",$db) or die("erreur de connexion bdd");
+
+				$requete='SELECT NumTshirt, nomtshirt, prix, photo FROM TSHIRT WHERE numsexe=2'or die("erreur requete");
+				$resultat=mysql_query($requete);
+				while ($ligne=mysql_fetch_assoc($resultat)) 
+				{
+								
+				echo '
+		 		<a href="developpeur.php?num='.$ligne["NumTshirt"].'"><div class="grid_3">
+		 			<div class="box maxheight">
+		 				'.$ligne["photo"].'
+		 				<div class="text1">'.$ligne["nomtshirt"].'</div>'.$ligne["prix"].'
+		 			€</div>
+		 		</div></a>
+		 	';
+}
+			?></div>
+		 </div>
 		
 		<div id="page4" class="content">
 			<div class="container_12">
