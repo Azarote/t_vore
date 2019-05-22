@@ -52,7 +52,7 @@
 				$db=mysql_connect("localhost","root","toor") or die("erreur de connexion serveur");
 				mysql_select_db("TVORE",$db) or die("erreur de connexion bdd");
 
-				$requete='SELECT NumTshirt, nomtshirt, prix, photo FROM TSHIRT WHERE numsexe=1'or die("erreur requete");
+				$requete='SELECT NumTshirt, nomtshirt, prix, photoBox FROM TSHIRT, PHOTO WHERE numsexe=1 AND photoBox=not null'or die("erreur requete");
 				$resultat=mysql_query($requete);
 				while ($ligne=mysql_fetch_assoc($resultat)) 
 				{
@@ -60,7 +60,7 @@
 				echo '
 		 		<a href="developpeur.php?num='.$ligne["NumTshirt"].'"><div class="grid_3">
 		 			<div class="box maxheight">
-		 				'.$ligne["photo"].'
+		 				'.$ligne["photoBox"].'
 		 				<div class="text1">'.$ligne["nomtshirt"].'</div>'.$ligne["prix"].'
 		 			€</div>
 		 		</div></a>

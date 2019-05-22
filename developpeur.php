@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/boutique.css">
 		<link rel="stylesheet" href="css/camera.css">
 		<link rel="stylesheet" href="css/form.css">
+		<link rel="stylesheet" href="css/developpeur.css">
 	</head>	
 	
 	<body>
@@ -46,29 +47,22 @@
 	$resultat = mysql_query("SELECT nomtshirt, prix, numcouleur, numtaille, photo, stock FROM TSHIRT WHERE NumTshirt=$num");
 	while ($ligne=mysql_fetch_assoc($resultat)) 
 	{
-		echo $ligne["nomtshirt"];
-	}
-				
-/*	$nom=$_POST['nomtshirt']; 
-	$prix=$_POST['prix'];
-	$couleur=$_POST['numcouleur'];
-	$taille=$_POST['numtaille'];
-	$photo=$_POST['photo'];
-	$stock=$_POST['stock'];
+		$nomtshirt=$ligne["nomtshirt"];
 		
 		echo"<div id='page2' class='content'>
 			<div class='container_12'>
 				<div class='grid_12'>
 					<div class='slogan'>
-						echo<h3>$require='SELECT $nom FROM TSHIRT WHERE $num='1'</h3>';
+						<h3>$nomtshirt</h3>
 					</div>
 				</div>
 				
-				<img src='photos/devGris/devGris.jpg'>
+				<img src='photos/devGris/devGris.jpg'> 
 
 			</div>
 		</div>";
-
+    }
+	
 		mysql_close($db); /*fermeture de MySQL*/
     }
 ?>
