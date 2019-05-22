@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -22,8 +22,8 @@
 							<ul class="sf-menu">
 								<li class="current men"><a  href="index.html">Accueil</a> <strong class="hover"></strong></li>
 								<li class="men1"><a  href="#">À propos</a><strong class="hover"></strong></li>
-								<li class="men2"><a  href="boutique.html">Boutique</a> <strong class="hover"></strong></li>
-								<li class="men3"><a  href="#">Se Connecter</a> <strong class="hover"></strong></li>
+								<li class="men2"><a  href="boutique.php">Boutique</a> <strong class="hover"></strong></li>
+								<li class="men3"><a  href="connect\index.html">Connexion</a> <strong class="hover"></strong></li>
 								<li class="men4"><a  href="#">Nous Contacter</a> <strong class="hover"></strong></li>
 								<li class="men5"><a  href="#">Votre Panier</a> <strong class="hover"></strong></li>
 							</ul>

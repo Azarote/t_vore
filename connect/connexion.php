@@ -17,12 +17,13 @@ if ($m["MdpClient"] == $mdp)
 {
 	
 	//header("location:moncompte.php");
-	echo '<meta http-equiv="refresh" content="0; URL=..\index.html">';
+	echo '<meta http-equiv="refresh" content="0; URL=..\index.php">';
 	$_SESSION["client"]= $m["idClient"];
 
 		if($m["idClient"] < 3)
 		{
 			$admin=1;
+			
 			//$_SESSION["admin"] = 1;
 		}
 		else

@@ -19,7 +19,7 @@ $_SESSION['prenomclient'] = $l["PrenomClient"];
 if($_SESSION["admin"]!=1)
 {
 	
-	header("location:../index.html");
+	header("location:../index.php");
 }
 
 ?>
