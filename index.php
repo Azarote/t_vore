@@ -20,7 +20,7 @@ echo "<html>";
 					echo '<div class="menu_block">';
 					echo '	<nav>';
 						echo '	<ul class="sf-menu">';
-							echo '	<li class="current men"><a  href="index.html">Accueil</a> <strong class="hover"></strong></li>';
+							echo '	<li class="current men"><a  href="index.php">Accueil</a> <strong class="hover"></strong></li>';
 							echo '	<li class="men1"><a  href="#page3">À propos</a><strong class="hover"></strong></li>';
 								echo '<li class="men2"><a  href="boutique.php">Boutique</a> <strong class="hover"></strong></li>';
 
@@ -28,12 +28,13 @@ echo "<html>";
 
 								if (empty($_SESSION['admin'])) {
 									echo '<li class="men3"><a  href="connect\index.html">Connexion</a> <strong class="hover"></strong></li>';
+									
 								
 									}
 
 									else {
-								echo "";
-
+								echo '<li class="men3"><a href="deconnexion.php">Déconnexion</a> <strong class="hover"></strong></li>';
+								
 								 
 								}
 
