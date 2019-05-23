@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿OCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -49,7 +49,7 @@
 				
 				<?php
 
-				$db=mysql_connect("localhost","root","toor") or die("erreur de connexion serveur");
+				$db=mysql_connect("localhost","root","admin") or die("erreur de connexion serveur");
 				mysql_select_db("TVORE",$db) or die("erreur de connexion bdd");
 
 				$requete='SELECT NumTshirt, nomtshirt, prix, photoBox FROM TSHIRT, PHOTO WHERE numsexe=1 AND photoBox=not null'or die("erreur requete");
@@ -80,7 +80,7 @@
 				</div>
 								<?php
 
-				$db=mysql_connect("localhost","root","toor") or die("erreur de connexion serveur");
+				$db=mysql_connect("localhost","root","admin") or die("erreur de connexion serveur");
 				mysql_select_db("TVORE",$db) or die("erreur de connexion bdd");
 
 				$requete='SELECT NumTshirt, nomtshirt, prix, photo FROM TSHIRT WHERE numsexe=2'or die("erreur requete");

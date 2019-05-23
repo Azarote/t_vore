@@ -42,12 +42,13 @@
 	{
 	$num=$_GET['num'];
 	
-	$db=mysql_connect("localhost","root","toor") or die("erreur de connection".mysql_error());		/*connection au serveur MySQL*/
+	$db=mysql_connect("localhost","root","admin") or die("erreur de connection".mysql_error());		/*connection au serveur MySQL*/
 	mysql_select_db("TVORE",$db) or die("Erreur de connection à la base T-VORE");		/*ouverture de la base TVORE*/
 	$resultat = mysql_query("SELECT nomtshirt, prix, numcouleur, numtaille, photo, stock FROM TSHIRT WHERE NumTshirt=$num");
 	while ($ligne=mysql_fetch_assoc($resultat)) 
 	{
 		$nomtshirt=$ligne["nomtshirt"];
+		$photo=$ligne["photo"];
 		
 		echo"<div id='page2' class='content'>
 			<div class='container_12'>
@@ -57,15 +58,40 @@
 					</div>
 				</div>
 				
-				<img src='photos/devGris/devGris.jpg'> 
+				$photo 
+				
+				<div class='listeRoulante'>
+				<span class='custom-dropdown custom-dropdown--white'>
+    <select class='custom-dropdown__select custom-dropdown__select--white'>
+        <option>Couleur</option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+    </select>
+</span>
+
+<span class='custom-dropdown custom-dropdown--white'>
+    <select class='custom-dropdown__select custom-dropdown__select--white'>
+        <option>Taille</option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+    </select>
+</span>
+</div>
 
 			</div>
+				
 		</div>";
+
     }
 	
 		mysql_close($db); /*fermeture de MySQL*/
     }
 ?>
+
 		
 
 		<footer>
