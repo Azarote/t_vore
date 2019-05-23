@@ -33,7 +33,7 @@ echo "<html>";
 									}
 
 									else {
-								echo '<li class="men3"><a href="deconnexion.php">Deconnexion</a> <strong class="hover"></strong></li>';
+								echo '<li class="men3"><a href="deconnexion.php">Déconnexion</a> <strong class="hover"></strong></li>';
 								
 								 
 								}
