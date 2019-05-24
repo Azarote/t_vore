@@ -21,7 +21,7 @@
 					<div class="menu_block">
 						<nav>
 							<ul class="sf-menu">
-								<li class="current men"><a  href="index.html">Accueil</a> <strong class="hover"></strong></li>
+								<li class="current men"><a  href="index.php">Accueil</a> <strong class="hover"></strong></li>
 								<li class="men1"><a  href="index.html #page3">À propos</a><strong class="hover"></strong></li>
 								<li class="men2"><a  href="boutique.php">Boutique</a> <strong class="hover"></strong></li>
 								<li class="men3"><a  href="#">Connection</a> <strong class="hover"></strong></li>
