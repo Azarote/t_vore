@@ -22,11 +22,11 @@
 						<nav>
 							<ul class="sf-menu">
 								<li class="current men"><a  href="index.php">Accueil</a> <strong class="hover"></strong></li>
-								<li class="men1"><a  href="index.html #page3">À propos</a><strong class="hover"></strong></li>
+								<li class="men1"><a  href="index.php #page3">À propos</a><strong class="hover"></strong></li>
 								<li class="men2"><a  href="boutique.php">Boutique</a> <strong class="hover"></strong></li>
 								<li class="men3"><a  href="#">Connection</a> <strong class="hover"></strong></li>
-								<li class="men4"><a  href="index.html #page4">Nous Contacter</a> <strong class="hover"></strong></li>
-								<li class="men5"><a  href="panier.html">Votre Panier</a> <strong class="hover"></strong></li>
+								<li class="men4"><a  href="index.php #page4">Nous Contacter</a> <strong class="hover"></strong></li>
+								<li class="men5"><a  href="panier.php">Votre Panier</a> <strong class="hover"></strong></li>
 							</ul>
 							</ul>
 						</nav>
@@ -49,6 +49,7 @@
 	{
 		$nomtshirt=$ligne["nomtshirt"];
 		$photo=$ligne["photo"];
+		$prix=$ligne["prix"];
 		
 		echo"<div id='page2' class='content'>
 			<div class='container_12'>
@@ -57,8 +58,12 @@
 						<h3>$nomtshirt</h3>
 					</div>
 				</div>
-				
+			
+			<div class='photoDiv'>	
 				$photo 
+			</div>	
+
+				<h2>$prix €</h2>
 				
 				<div class='listeRoulante'>
 				<span class='custom-dropdown custom-dropdown--white'>
@@ -80,6 +85,8 @@
         <option></option>
     </select>
 </span>
+
+<div class='btns'><a data-type='submit'>Envoyez</a></div>
 </div>
 
 			</div>
