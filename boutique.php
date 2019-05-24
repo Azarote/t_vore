@@ -1,4 +1,4 @@
-﻿OCTYPE html>
+﻿DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -20,10 +20,10 @@
 					<div class="menu_block">
 						<nav>
 							<ul class="sf-menu">
-								<li class="current men"><a  href="index.html">Accueil</a> <strong class="hover"></strong></li>
+								<li class="current men"><a  href="index.php">Accueil</a> <strong class="hover"></strong></li>
 								<li class="men1"><a  href="#">À propos</a><strong class="hover"></strong></li>
 								<li class="men2"><a  href="boutique.php">Boutique</a> <strong class="hover"></strong></li>
-								<li class="men3"><a  href="connect\index.html">Connexion</a> <strong class="hover"></strong></li>
+								<li class="men3"><a  href="connect\index.php">Connexion</a> <strong class="hover"></strong></li>
 								<li class="men4"><a  href="#">Nous Contacter</a> <strong class="hover"></strong></li>
 								<li class="men5"><a  href="#">Votre Panier</a> <strong class="hover"></strong></li>
 							</ul>
@@ -52,7 +52,7 @@
 				$db=mysql_connect("localhost","root","admin") or die("erreur de connexion serveur");
 				mysql_select_db("TVORE",$db) or die("erreur de connexion bdd");
 
-				$requete='SELECT NumTshirt, nomtshirt, prix, photoBox FROM TSHIRT, PHOTO WHERE numsexe=1 AND photoBox=not null'or die("erreur requete");
+				$requete='SELECT NumTshirt, nomtshirt, prix, photo FROM TSHIRT WHERE numsexe=1'or die("erreur requete");
 				$resultat=mysql_query($requete);
 				while ($ligne=mysql_fetch_assoc($resultat)) 
 				{
@@ -60,7 +60,7 @@
 				echo '
 		 		<a href="developpeur.php?num='.$ligne["NumTshirt"].'"><div class="grid_3">
 		 			<div class="box maxheight">
-		 				'.$ligne["photoBox"].'
+		 				'.$ligne["photo"].'
 		 				<div class="text1">'.$ligne["nomtshirt"].'</div>'.$ligne["prix"].'
 		 			€</div>
 		 		</div></a>
