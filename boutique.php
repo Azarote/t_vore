@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>T-VORE - Boutique</title>
 		<link rel="icon" href="images/favicon.ico">
 		<link rel="shortcut icon" href="images/favicon.ico" />
@@ -21,11 +21,11 @@
 						<nav>
 							<ul class="sf-menu">
 								<li class="current men"><a  href="index.php">Accueil</a> <strong class="hover"></strong></li>
-								<li class="men1"><a  href="#">À propos</a><strong class="hover"></strong></li>
+								<li class="men1"><a  href="index.php #page3">À propos</a><strong class="hover"></strong></li>
 								<li class="men2"><a  href="boutique.php">Boutique</a> <strong class="hover"></strong></li>
-								<li class="men3"><a  href="connect\index.php">Connection</a> <strong class="hover"></strong></li>
-								<li class="men4"><a  href="#">Nous Contacter</a> <strong class="hover"></strong></li>
-								<li class="men5"><a  href="#">Votre Panier</a> <strong class="hover"></strong></li>
+								<li class="men3"><a  href="connect\index.html">Connection</a> <strong class="hover"></strong></li>
+								<li class="men4"><a  href="index.php #page4">Nous Contacter</a> <strong class="hover"></strong></li>
+								<li class="men5"><a  href="panier.php">Votre Panier</a> <strong class="hover"></strong></li>
 							</ul>
 							</ul>
 						</nav>
@@ -52,20 +52,20 @@
 				$db=mysql_connect("localhost","root","admin") or die("erreur de connexion serveur");
 				mysql_select_db("TVORE",$db) or die("erreur de connexion bdd");
 
-				$requete='SELECT NumTshirt, nomtshirt, prix, photo FROM TSHIRT WHERE numsexe=1'or die("erreur requete");
+				$requete='SELECT t.numTshirt, t.nomtshirt, t.prix, p.cheminImage, p.numCouleur FROM tshirt AS t INNER JOIN photo AS p ON p.numTshirt = t.numTshirt AND p.parDefaut = 1 WHERE t.genre=1'or die("erreur requete");
 				$resultat=mysql_query($requete);
 				while ($ligne=mysql_fetch_assoc($resultat)) 
 				{
-								
-				echo '
-		 		<a href="developpeur.php?num='.$ligne["NumTshirt"].'"><div class="grid_3">
-		 			<div class="box maxheight">
-		 				'.$ligne["photo"].'
-		 				<div class="text1">'.$ligne["nomtshirt"].'</div>'.$ligne["prix"].'
-		 			€</div>
-		 		</div></a>
-		 	';
-}
+					echo '<a href="developpeur.php?num='.$ligne["numTshirt"].'&amp;couleur='.$ligne["numCouleur"].'">
+					        <div class="grid_3">
+				 				<div class="box maxheight">
+				 					<img src="photos/'.$ligne["cheminImage"].'">
+				 					<div class="text1">'.utf8_encode($ligne["nomtshirt"]).'</div>
+				 					<div class="text2">'.$ligne["prix"].' €</div>
+				 				</div>
+				 		    </div>
+				 		  </a>';
+		 		}
 			?></div>
 		 </div>
 				
@@ -83,20 +83,20 @@
 				$db=mysql_connect("localhost","root","admin") or die("erreur de connexion serveur");
 				mysql_select_db("TVORE",$db) or die("erreur de connexion bdd");
 
-				$requete='SELECT NumTshirt, nomtshirt, prix, photo FROM TSHIRT WHERE numsexe=2'or die("erreur requete");
+				$requete='SELECT t.numTshirt, t.nomtshirt, t.prix, p.cheminImage, p.numCouleur FROM tshirt AS t INNER JOIN photo AS p ON p.numTshirt = t.numTshirt AND p.parDefaut = 1 WHERE t.genre=2'or die("erreur requete");
 				$resultat=mysql_query($requete);
 				while ($ligne=mysql_fetch_assoc($resultat)) 
 				{
-								
-				echo '
-		 		<a href="developpeur.php?num='.$ligne["NumTshirt"].'"><div class="grid_3">
-		 			<div class="box maxheight">
-		 				'.$ligne["photo"].'
-		 				<div class="text1">'.$ligne["nomtshirt"].'</div>'.$ligne["prix"].'
-		 			€</div>
-		 		</div></a>
-		 	';
-}
+					echo '<a href="developpeur.php?num='.$ligne["numTshirt"].'&amp;couleur='.$ligne["numCouleur"].'">
+					        <div class="grid_3">
+				 				<div class="box maxheight">
+				 					<img src="photos/'.$ligne["cheminImage"].'">
+				 					<div class="text1">'.utf8_encode($ligne["nomtshirt"]).'</div>
+				 					<div class="text2">'.$ligne["prix"].' €</div>
+				 				</div>
+				 		    </div>
+				 		  </a>';
+		 		}
 			?></div>
 		 </div>
 		

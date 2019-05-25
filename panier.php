@@ -40,15 +40,25 @@
 			<div class="container_12">
 				<div class="grid_12">
 					<div class="slogan">
-						<h3>Le personnel de l'organisation</h3>
-						
+						<h3>Vos commandes</h3>
+						<?php  
+						session_start();
+
+						var_dump($_SESSION['cart']);
+
+						$wherein = implode(',', $_SESSION['cart']);
+
+						$sql = "
+						SELECT * 
+						FROM products
+						WHERE id IN ($wherein)
+						";
+
+						echo "$sql";
+						?>
 					</div>
 				</div>
-				<div class="grid_3">
-					<div class="box maxheight">
-						
-					</div>
-				</div>
+				
 				
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 	<head>
@@ -24,9 +24,9 @@
 								<li class="current men"><a  href="index.php">Accueil</a> <strong class="hover"></strong></li>
 								<li class="men1"><a  href="index.php #page3">À propos</a><strong class="hover"></strong></li>
 								<li class="men2"><a  href="boutique.php">Boutique</a> <strong class="hover"></strong></li>
-								<li class="men3"><a  href="#">Connection</a> <strong class="hover"></strong></li>
+								<li class="men3"><a  href="connect\index.html">Connection</a> <strong class="hover"></strong></li>
 								<li class="men4"><a  href="index.php #page4">Nous Contacter</a> <strong class="hover"></strong></li>
-								<li class="men5"><a  href="panier.php">Votre Panier</a> <strong class="hover"></strong></li>
+								<li class="men5"><a  href="panier.html">Votre Panier</a> <strong class="hover"></strong></li>
 							</ul>
 							</ul>
 						</nav>
@@ -40,28 +40,38 @@
 	<?php
 	if (isset($_GET['num']))
 	{
-	$num=$_GET['num'];
+	$numTshirt=$_GET['num'];
+	$numCouleur=$_GET['couleur'];
 	
 	$db=mysql_connect("localhost","root","admin") or die("erreur de connection".mysql_error());		/*connection au serveur MySQL*/
 	mysql_select_db("TVORE",$db) or die("Erreur de connection à la base T-VORE");		/*ouverture de la base TVORE*/
-	$resultat = mysql_query("SELECT nomtshirt, prix, numcouleur, numtaille, photo, stock FROM TSHIRT WHERE NumTshirt=$num");
+	$resultat = mysql_query("SELECT nomtshirt, prix FROM tshirt WHERE numTshirt=$numTshirt");
 	while ($ligne=mysql_fetch_assoc($resultat)) 
 	{
-		$nomtshirt=$ligne["nomtshirt"];
-		$photo=$ligne["photo"];
+		$nomtshirt=utf8_encode($ligne["nomtshirt"]);
 		$prix=$ligne["prix"];
-		
-		echo"<div id='page2' class='content'>
-			<div class='container_12'>
+	}
+
+
+	echo "<div id='page2' class='content'>
+		  <div class='container_12'>
 				<div class='grid_12'>
-					<div class='slogan'>
-						<h3>$nomtshirt</h3>
+						<div class='slogan'>
+							<h3>$nomtshirt</h3>
+						</div>
 					</div>
-				</div>
 			
-			<div class='photoDiv'>	
-				$photo 
-			</div>	
+			<div class='photoDiv'>";
+
+	$resultat = mysql_query("SELECT cheminImage FROM photo WHERE numTshirt=$numTshirt and numCouleur=$numCouleur");
+	while ($ligne=mysql_fetch_assoc($resultat)) 
+	{
+		$cheminImage=$ligne["cheminImage"];
+		echo "<div class='photo1'>	
+				<img src='photos/$cheminImage'>
+  			  </div>";
+  	}
+  	echo "</div>	
 
 				<h2>$prix €</h2>
 				
@@ -85,16 +95,12 @@
         <option></option>
     </select>
 </span>
-
-<div class='btns'><a data-type='submit'>Envoyez</a></div>
 </div>
 
-			</div>
-				
-		</div>";
+		<div class='validDev'><a data-type='submit'>Ajouter au Panier</a></div>
+	</div>
+</div>";
 
-    }
-	
 		mysql_close($db); /*fermeture de MySQL*/
     }
 ?>
