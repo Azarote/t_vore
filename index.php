@@ -27,7 +27,7 @@ echo "<html>";
 								
 
 								if (empty($_SESSION['admin'])) {
-									echo '<li class="men3"><a  href="connect\index.html">Connection</a> <strong class="hover"></strong></li>';
+									echo '<li class="men3"><a  href="connect\index.html">Connexion</a> <strong class="hover"></strong></li>';
 									
 								
 									}

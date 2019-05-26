@@ -43,7 +43,7 @@ echo'
 					<input type="submit" value="Se connecter">
 				</td>
 				<td align="right">
-					<a href="../index.html">Revenir à l\'accueil</a>
+					<a href="../index.php">Revenir à l\'accueil</a>
 				</td>
 
 			</form>

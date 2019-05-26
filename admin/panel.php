@@ -7,7 +7,7 @@ $id=$_SESSION["client"];
 include("connect.inc.php");
 
 // Requête pour récuperer toutes les infos de l'admin connecté
-$req="SELECT PrenomClient, MailClient, MdpClient FROM client Where idclient= '$id'";
+$req="SELECT PrenomClient, MailClient, MdpClient FROM client Where IdClient= '$id'";
 $res=mysql_query($req) or die ("Une erreur dans la requête");
 $l=mysql_fetch_assoc($res);
 
@@ -26,16 +26,20 @@ if($_SESSION["admin"]!=1)
 <html>
 	
 	<head>
-		
+				<title>T-VORE - Panel Admin</title>
+				<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="icon" href="../images/favicon.ico">
+		<link rel="shortcut icon" href="../images/favicon.ico" />
+
 		<meta charset="UTF-8">
 	</head>
 
 	<body>
 
-<header>
+ <header>
 	Bienvenue <?php echo $_SESSION['prenomclient']; ?>
 	<a href="../deconnexion.php">(Se déconnecter)</a>
-</header>
+</header> 
 
 <div class="site">
 
@@ -58,7 +62,7 @@ if(isset($_GET["page"]))
 else
 	{
 		// Si aucune page selectionné, affichage de la liste des commandes.
-		include("liste_commande.php");
+		include("liste_membres.php");
 	}
 ?>
 

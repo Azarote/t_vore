@@ -10,18 +10,18 @@ $mdp=md5($mdp);
 
 include("connect.inc.php");
 
-$req="SELECT idClient, NomClient, MailClient, MdpClient FROM CLIENT Where MailClient='$email' AND MdpClient='$mdp'";
+$req="SELECT IdClient, NomClient, MailClient, MdpClient FROM CLIENT Where MailClient='$email' AND MdpClient='$mdp'";
 $res=mysql_query($req) or die ("Une erreur dans la requête");
 $l=mysql_fetch_assoc($res);
 
-$_SESSION["client"]=$l["idClient"];
+$_SESSION["client"]=$l["IdClient"];
 
 // Si le résultat de la requête n'est pas vide (si le couple email/mot de passe existe dans la base de données)
 if(!empty($l))
 
 {
 
-	if ($l["idClient"] < 3)
+	if ($l["IdClient"] < 3)
 		{
 			//header('location: panel.php');
 			//$URL="panel.php";
