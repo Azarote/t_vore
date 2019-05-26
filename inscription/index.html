@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+            <link rel="icon" href="../images/favicon.ico">
+        <link rel="shortcut icon" href="../images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>T-VORE - Inscription</title>
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <section class="signup">
+
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" action="nouveau_cli.php">
+                        <h2 class="form-title">Création de compte</h2>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="nom" placeholder="Votre Nom"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="prenom" placeholder="Votre Prénom"/>
+                        </div>
+                                                <div class="form-group">
+                            <input type="text" class="form-input" name="adresse" placeholder="Votre Adresse"/>
+                        </div>
+                                                <div class="form-group">
+                            <input type="text" class="form-input" name="cp" placeholder="Vote Code Postal"/>
+                        </div>
+                                                <div class="form-group">
+                            <input type="text" class="form-input" name="ville" placeholder="Votre Ville"/>
+                        </div>
+                                                <div class="form-group">
+                            <input type="number" class="form-input" name="tel" placeholder="Vote Téléphone"/>
+                        </div>
+                                                <div class="form-group">
+                            <input type="email" class="form-input" name="mail" placeholder="Votre Email"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="mdp1" id="password" placeholder="Mot de passe"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-input" name="mdp2" id="re_password" placeholder="Tépéter votre mot de passe"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>En cochant j'accepte les  <a href="#" class="term-service">Terme et ondition</a></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Inscription"/>
+                        </div>
+                    </form>
+                    <p class="loginhere">
+                        Déja un compte ? <a href="../connect/" class="loginhere-link">Connecter-vous ici</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
