@@ -66,7 +66,8 @@
 		  <div class='container_12'>
 				<div class='grid_12'>
 						<div class='slogan'>
-							<h3>$nomtshirt $libelleCouleur $libelleTaille Quantité en stock $stock</h3>
+							<h3>$nomtshirt $libelleCouleur $libelleTaille</h3>
+							<h3>Quantité en stock $stock</h3>
 						</div>
 					</div>
 			
@@ -96,8 +97,9 @@
     // Tester si il y a un résultat
 
 	echo "<div>D'autres références existent pour cet article :</div>
-	      <table>
-	        <th><td>Référence</td><td>Couleur</td><td>Taille</td><td>Quantité disponible</td></th>
+
+	    <table>
+	        <tr class='refCol'><th> Référence </th> <th> Couleur </th> <th> Taille </th> <th> Quantité </th></tr>
 	     ";
 	while ($ligne=mysql_fetch_assoc($resultat)) 
 	{
@@ -105,15 +107,28 @@
 		$stock=$ligne["stock"];
 		$libelleCouleur=$ligne["libelleCouleur"];
 		$libelleTaille=$ligne["libelleTaille"];
-	    echo '<tr><td><a href="?ref='.$numRef2.'">'.$numRef2.'</a></td><td>'.$libelleCouleur.'</td><td>'.$libelleTaille.'</td><td>'.$stock.'</td></tr>
+	    echo '<tr><td class="refCol2"><a href="?ref='.$numRef2.'">'.$numRef2.'</a></td><td>'.$libelleCouleur.'</td><td>'.$libelleTaille.'</td><td>'.$stock.'</td></tr>
 	         ';
   	}
   	echo "</table>";
 
-	echo "<div class='validDev'><a data-type='submit'>Ajouter au Panier</a></div>
+	echo '<div>
+	        <form method="post" action="panier.php">
+	          <input type="hidden" value="'.$numRef.'" name="ref">
+	          <input type="submit" value="Ajouter au panier" name="panier" class="validDev">
+	        </form>
+	      </div>
 	</div>
-</div>";
+</div>';
 
+// if (isset($_POST['envoi'])) {
+// 	if ($stock > 0) {
+// 		UPDATE refTshirt SET stock = stock-1 WHERE numRef= $numRef
+// 	}
+// 	else {
+// 		echo "Cet article est en rupture de stock";
+// 	}
+// }
 		mysql_close($db); /*fermeture de MySQL*/
     }
 ?>
