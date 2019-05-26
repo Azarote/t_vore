@@ -1,31 +1,30 @@
 ﻿<?php  
-session_start()
-echo'<!DOCTYPE html>
-
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>T-VORE - Developpeur</title>
-		<link rel="icon" href="images/favicon.ico">
-		<link rel="shortcut icon" href="images/favicon.ico" />
-		<link rel="stylesheet" href="css/boutique.css">
-		<link rel="stylesheet" href="css/camera.css">
-		<link rel="stylesheet" href="css/form.css">
-		<link rel="stylesheet" href="css/developpeur.css">
-	</head>	
+session_start();
+echo '<!DOCTYPE html>';
+echo '<html>';
+	echo '<head>';
+		echo '<meta charset="utf-8">';
+		echo '<title>T-VORE - Developpeur</title>';
+		echo '<link rel="icon" href="images/favicon.ico">';
+		echo '<link rel="shortcut icon" href="images/favicon.ico" />';
+		echo '<link rel="stylesheet" href="css/boutique.css">';
+		echo '<link rel="stylesheet" href="css/camera.css">';
+		echo '<link rel="stylesheet" href="css/form.css">';
+		echo '<link rel="stylesheet" href="css/developpeur.css">';
+	echo '</head>';
 	
-	<body>
+	echo '<body>';
 
-		<header class="page1">
-			<div class="container_12">
-				<div class="grid_12">
-					<h1><a href="#"><img src="images/logo.png"></a></h1>
-					<div class="menu_block">
-						<nav>
-							<ul class="sf-menu">
-								<li class="current men"><a  href="index.php">Accueil</a> <strong class="hover"></strong></li>
-								<li class="men1"><a  href="index.php #page3">À propos</a><strong class="hover"></strong></li>
-								<li class="men2"><a  href="boutique.php">Boutique</a> <strong class="hover"></strong></li>';
+		echo '<header class="page1">';
+			echo '<div class="container_12">';
+				echo '<div class="grid_12">';
+					echo '<h1><a href="#"><img src="images/logo.png"></a></h1>';
+					echo '<div class="menu_block">';
+						echo '<nav>';
+							echo '<ul class="sf-menu">';
+								echo '<li class="current men"><a  href="index.php">Accueil</a> <strong class="hover"></strong></li>';
+								echo '<li class="men1"><a  href="index.php #page3">À propos</a><strong class="hover"></strong></li>';
+								echo '<li class="men2"><a  href="boutique.php">Boutique</a> <strong class="hover"></strong></li>';
 								if (empty($_SESSION['admin'])) {
 									echo '<li class="men3"><a  href="connect\index.html">Connexion</a> <strong class="hover"></strong></li>';
 									
