@@ -60,9 +60,9 @@ echo "<html>";
 					
 					<div class="socials">
 						<a href="https://www.facebook.com/T-Vore-329462687718812"></a>
-						<a href="https://www.facebook.com/T-Vore-329462687718812"></a>
-						<a href="https://www.facebook.com/T-Vore-329462687718812"></a>
-						<a href="https://www.facebook.com/T-Vore-329462687718812"></a>
+						<a href="https://twitter.com/vore_t"></a>
+						<a href="https://plus.google.com/"></a>
+						<a href="https://fr.linkedin.com/"></a>
 					</div>
 				</div>
 			</div>
