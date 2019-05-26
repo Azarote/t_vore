@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<?php  
+echo'<!DOCTYPE html>
 
 <html>
 	<head>
@@ -23,8 +24,19 @@
 							<ul class="sf-menu">
 								<li class="current men"><a  href="index.php">Accueil</a> <strong class="hover"></strong></li>
 								<li class="men1"><a  href="index.php #page3">À propos</a><strong class="hover"></strong></li>
-								<li class="men2"><a  href="boutique.php">Boutique</a> <strong class="hover"></strong></li>
-								<li class="men3"><a  href="connect\index.html">Connexion</a> <strong class="hover"></strong></li>
+								<li class="men2"><a  href="boutique.php">Boutique</a> <strong class="hover"></strong></li>';
+								if (empty($_SESSION['admin'])) {
+									echo '<li class="men3"><a  href="connect\index.html">Connexion</a> <strong class="hover"></strong></li>';
+									
+								
+									}
+
+									else {
+								echo '<li class="men3"><a href="deconnexion.php">Déconnexion</a> <strong class="hover"></strong></li>';
+								
+								 
+								}
+								?>
 								<li class="men4"><a  href="index.php #page4">Nous Contacter</a> <strong class="hover"></strong></li>
 								<li class="men5"><a  href="panier.html">Votre Panier</a> <strong class="hover"></strong></li>
 							</ul>
