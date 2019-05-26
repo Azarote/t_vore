@@ -23,7 +23,7 @@
 								<li class="current men"><a  href="index.php">Accueil</a> <strong class="hover"></strong></li>
 								<li class="men1"><a  href="index.php #page3">À propos</a><strong class="hover"></strong></li>
 								<li class="men2"><a  href="boutique.php">Boutique</a> <strong class="hover"></strong></li>
-								<li class="men3"><a  href="connect\index.html">Connection</a> <strong class="hover"></strong></li>
+								<li class="men3"><a  href="connect\index.html">Connexion</a> <strong class="hover"></strong></li>
 								<li class="men4"><a  href="index.php #page4">Nous Contacter</a> <strong class="hover"></strong></li>
 								<li class="men5"><a  href="panier.php">Votre Panier</a> <strong class="hover"></strong></li>
 							</ul>
@@ -36,6 +36,10 @@
 			</div>
 		</header>
 
+		<?php
+			$db=mysql_connect("localhost","root","admin") or die("erreur de connexion serveur");
+			mysql_select_db("TVORE",$db) or die("erreur de connexion bdd");
+		?>
 
 		<div id="page2" class="content">
 			<div class="container_12">
@@ -48,15 +52,16 @@
 
 				
 				<?php
-
-				$db=mysql_connect("localhost","root","admin") or die("erreur de connexion serveur");
-				mysql_select_db("TVORE",$db) or die("erreur de connexion bdd");
-
-				$requete='SELECT t.numTshirt, t.nomtshirt, t.prix, p.cheminImage, p.numCouleur FROM tshirt AS t INNER JOIN photo AS p ON p.numTshirt = t.numTshirt AND p.parDefaut = 1 WHERE t.genre=1'or die("erreur requete");
-				$resultat=mysql_query($requete);
+				$requete='SELECT t.numTshirt, t.nomtshirt, t.prix, p.cheminImage, r.numRef
+				          FROM tshirt AS t
+				          INNER JOIN photo AS p ON p.numTshirt = t.numTshirt AND p.parDefaut = 1
+				          INNER JOIN reftshirt AS r ON r.numTshirt = t.numTshirt AND r.parDefaut = 1
+				          WHERE t.genre=1
+				          ORDER BY t.nomtshirt';
+				$resultat=mysql_query($requete) or die("erreur requete");
 				while ($ligne=mysql_fetch_assoc($resultat)) 
 				{
-					echo '<a href="developpeur.php?num='.$ligne["numTshirt"].'&amp;couleur='.$ligne["numCouleur"].'">
+					echo '<a href="developpeur.php?ref='.$ligne["numRef"].'">
 					        <div class="grid_3">
 				 				<div class="box maxheight">
 				 					<img src="photos/'.$ligne["cheminImage"].'">
@@ -79,15 +84,16 @@
 					</div>
 				</div>
 								<?php
-
-				$db=mysql_connect("localhost","root","admin") or die("erreur de connexion serveur");
-				mysql_select_db("TVORE",$db) or die("erreur de connexion bdd");
-
-				$requete='SELECT t.numTshirt, t.nomtshirt, t.prix, p.cheminImage, p.numCouleur FROM tshirt AS t INNER JOIN photo AS p ON p.numTshirt = t.numTshirt AND p.parDefaut = 1 WHERE t.genre=2'or die("erreur requete");
-				$resultat=mysql_query($requete);
+				$requete='SELECT t.numTshirt, t.nomtshirt, t.prix, p.cheminImage, r.numRef
+				          FROM tshirt AS t
+				          INNER JOIN photo AS p ON p.numTshirt = t.numTshirt AND p.parDefaut = 1
+				          INNER JOIN reftshirt AS r ON r.numTshirt = t.numTshirt AND r.parDefaut = 1
+				          WHERE t.genre=2
+				          ORDER BY t.nomtshirt';
+				$resultat=mysql_query($requete) or die("erreur requete");
 				while ($ligne=mysql_fetch_assoc($resultat)) 
 				{
-					echo '<a href="developpeur.php?num='.$ligne["numTshirt"].'&amp;couleur='.$ligne["numCouleur"].'">
+					echo '<a href="developpeur.php?ref='.$ligne["numRef"].'">
 					        <div class="grid_3">
 				 				<div class="box maxheight">
 				 					<img src="photos/'.$ligne["cheminImage"].'">
@@ -106,57 +112,29 @@
 					<div class="slogan">
 						<h3>Goodies</h3>
 							</div>
-				</div>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/goodies/coussinOurs.jpg" alt="">
-						<div class="text1">Coussin Ours</div>17,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/goodies/mugCode.jpg" alt="">
-						<div class="text1">Mug de Développeur</div>14,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/goodies/sacSport.jpg" alt="">
-						<div class="text1">Sac de Sport</div>24,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/goodies/tapisSouris.jpg" alt="">
-						<div class="text1">Tapi de Souris Ramen </div>24,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/goodies/coussinOurs.jpg" alt="">
-						<div class="text1">Coussin Ours</div>17,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/goodies/mugCode.jpg" alt="">
-						<div class="text1">Mug de Développeur</div>14,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/goodies/sacSport.jpg" alt="">
-						<div class="text1">Sac de Sport</div>24,99€
-					</div>
-				</div></a>
-				<a href="#"><div class="grid_3">
-					<div class="box maxheight1">
-						<img src="photos/goodies/tapisSouris.jpg" alt="">
-						<div class="text1">Tapi de Souris Ramen </div>24,99€
-					</div>
-				</div></a>
-			</div>
-		</div> 
+						</div>
+				<?php
+				$requete='SELECT t.numTshirt, t.nomtshirt, t.prix, p.cheminImage, r.numRef
+				          FROM tshirt AS t
+				          INNER JOIN photo AS p ON p.numTshirt = t.numTshirt AND p.parDefaut = 1
+				          INNER JOIN reftshirt AS r ON r.numTshirt = t.numTshirt AND r.parDefaut = 1
+				          WHERE t.genre=0
+				          ORDER BY t.nomtshirt';
+				$resultat=mysql_query($requete) or die("erreur requete");
+				while ($ligne=mysql_fetch_assoc($resultat)) 
+				{
+					echo '<a href="developpeur.php?ref='.$ligne["numRef"].'">
+					        <div class="grid_3">
+				 				<div class="box maxheight">
+				 					<img src="photos/'.$ligne["cheminImage"].'">
+				 					<div class="text1">'.utf8_encode($ligne["nomtshirt"]).'</div>
+				 					<div class="text2">'.$ligne["prix"].' €</div>
+				 				</div>
+				 		    </div>
+				 		  </a>';
+		 		}
+			?></div>
+		 </div>
 		<footer>
 			<div class="container_12">
 				<div class="grid_12">
