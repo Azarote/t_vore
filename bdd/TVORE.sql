@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  Dim 26 mai 2019 à 15:39
+-- Généré le :  Dim 26 mai 2019 à 21:01
 -- Version du serveur :  10.1.28-MariaDB
 -- Version de PHP :  5.6.32
 
@@ -52,6 +52,13 @@ CREATE TABLE `client` (
   `MdpClient` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `client`
+--
+
+INSERT INTO `client` (`IdClient`, `NomClient`, `PrenomClient`, `adresseclient`, `CpClient`, `Villeclient`, `TelClient`, `MailClient`, `MdpClient`) VALUES
+(1, 'Terrisse', 'JudicaÃ«l', '41 rue Lacoste', 13129, 'Salin de Giraud ', 4051247, 'judcael@lesterrisse.com', '46771d1f432b42343f56f791422a4991');
+
 -- --------------------------------------------------------
 
 --
@@ -93,6 +100,17 @@ INSERT INTO `couleur` (`numCouleur`, `libellecouleur`) VALUES
 (4, 'Rouge'),
 (6, 'Vert'),
 (11, 'Violet');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `panier`
+--
+
+CREATE TABLE `panier` (
+  `IdClient` int(11) NOT NULL,
+  `numRef` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -897,6 +915,13 @@ ALTER TABLE `couleur`
   ADD UNIQUE KEY `libellecouleur` (`libellecouleur`);
 
 --
+-- Index pour la table `panier`
+--
+ALTER TABLE `panier`
+  ADD KEY `LienPanierClient` (`IdClient`),
+  ADD KEY `LienPanierRefTshirt` (`numRef`);
+
+--
 -- Index pour la table `photo`
 --
 ALTER TABLE `photo`
@@ -936,7 +961,7 @@ ALTER TABLE `tshirt`
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `IdClient` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdClient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `couleur`
@@ -971,6 +996,13 @@ ALTER TABLE `tshirt`
 --
 -- Contraintes pour les tables déchargées
 --
+
+--
+-- Contraintes pour la table `panier`
+--
+ALTER TABLE `panier`
+  ADD CONSTRAINT `LienPanierClient` FOREIGN KEY (`IdClient`) REFERENCES `client` (`IdClient`),
+  ADD CONSTRAINT `LienPanierRefTshirt` FOREIGN KEY (`numRef`) REFERENCES `reftshirt` (`numRef`);
 
 --
 -- Contraintes pour la table `photo`
