@@ -90,7 +90,7 @@ echo "<html>";
 				<div class="grid_3">
 					<div class="box maxheight">
 						<img src="images/box_img2.jpg" alt="">
-						<div class="text1"><a href="#">Matteo Munoz</a></div>PDG
+						<div class="text1"><a href="#">Anton Stegner</a></div>PDG
 						<div class="socials1">
 							<a href="#"></a>
 							<a href="#"></a>
@@ -102,7 +102,7 @@ echo "<html>";
 				<div class="grid_3">
 					<div class="box maxheight">
 						<img src="images/box_img3.jpg" alt="">
-						<div class="text1"><a href="#">Judicaël Terrisse </a></div>Directeur Commercial
+						<div class="text1"><a href="#">Lisa Haddon </a></div>Directeur Commercial
 						<div class="socials1">
 							<a href="#"></a>
 							<a href="#"></a>
