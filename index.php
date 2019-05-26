@@ -41,7 +41,6 @@ echo "<html>";
 								 ?>
 
 								<li class="men4"><a  href="#page4">Nous Contacter</a> <strong class="hover"></strong></li>
-								<li class="men5"><a  href="panier.html">Votre Panier</a> <strong class="hover"></strong></li>
 							</ul>
 							</ul>
 						</nav>

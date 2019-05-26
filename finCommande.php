@@ -38,7 +38,6 @@ echo '<html>';
 								}
 								?>
 								<li class="men4"><a  href="index.php #page4">Nous Contacter</a> <strong class="hover"></strong></li>
-								<li class="men5"><a  href="panier.html">Votre Panier</a> <strong class="hover"></strong></li>
 							</ul>
 							</ul>
 						</nav>
@@ -71,7 +70,7 @@ echo '<html>';
 					<div class="slogan">
 						<h3>Votre commande a été prise en compte</h3>
 						
-						<p>Nous vous remercions d'avoir effectué vos achats sur T-VORE ! <a href="index.php">Retourner à l'acceuil</a></p>
+						<p>Nous vous remercions d'avoir effectué vos achats sur T-VORE ! <a href="index.php">Retourner à l'accueil</a></p>
 
 					</div>
 				</div>	
