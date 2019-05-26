@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 session_start();
 echo '<!DOCTYPE html>';
 echo '<html>';
