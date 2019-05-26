@@ -1,4 +1,11 @@
-﻿<table border="1">
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="table.css">
+</head>
+<body>
+
+<table class="zui-table">
 	<caption><h3>Liste membres</h3></caption>
 <form action="panel.php?page=modif_membre" method="POST">
 

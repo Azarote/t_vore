@@ -3,18 +3,22 @@
     border-collapse: collapse;
     border-spacing: 0;
     font: normal 13px Arial, sans-serif;
+    font
 }
 .zui-table thead th {
-    background-color: #DDEFEF;
-    border: solid 1px #DDEEEE;
-    color: #336B6B;
+    background-color: #000000;
+    border: solid 1px #000000;
+    color: #000000;
     padding: 10px;
     text-align: left;
     text-shadow: 1px 1px 1px #fff;
 }
 .zui-table tbody td {
-    border: solid 1px #DDEEEE;
-    color: #333;
+    border: solid 1px #000000;
+    color: #000000;
     padding: 10px;
     text-shadow: 1px 1px 1px #fff;
+}
+table {
+    background-color: #E3E3E3;
 }

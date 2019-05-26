@@ -8,7 +8,7 @@
 
 
 
-<table class="zui-table" align="center">
+<table class="zui-table" align="center" style="color: black;" >
 <center><h3>Liste des produits</h3></center>
 <form method="POST" action="panel.php?page=modif_produit">
 <tr align="center">
