@@ -4,7 +4,7 @@ echo '<!DOCTYPE html>';
 echo '<html>';
 	echo '<head>';
 		echo '<meta charset="utf-8">';
-		echo '<title>T-VORE - Developpeur</title>';
+		echo '<title>T-VORE - T-shirt</title>';
 		echo '<link rel="icon" href="images/favicon.ico">';
 		echo '<link rel="shortcut icon" href="images/favicon.ico" />';
 		echo '<link rel="stylesheet" href="css/boutique.css">';
@@ -127,20 +127,12 @@ echo '<html>';
 	echo '<div>
 	        <form method="post" action="panier.php">
 	          <input type="hidden" value="'.$numRef.'" name="ref">
-	          <input type="submit" value="Ajouter au panier" name="panier" class="validDev">
+	          <input type="submit" value="Ajouter au panier" name="ajoutPanier" class="validDev">
 	        </form>
 	      </div>
 	</div>
 </div>';
 
-// if (isset($_POST['envoi'])) {
-// 	if ($stock > 0) {
-// 		UPDATE refTshirt SET stock = stock-1 WHERE numRef= $numRef
-// 	}
-// 	else {
-// 		echo "Cet article est en rupture de stock";
-// 	}
-// }
 		mysql_close($db); /*fermeture de MySQL*/
     }
 ?>

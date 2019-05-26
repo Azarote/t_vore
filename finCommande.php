@@ -4,7 +4,7 @@ echo '<!DOCTYPE html>';
 echo '<html>';
 	echo '<head>';
 		echo '<meta charset="utf-8">';
-		echo '<title>T-VORE - T-shirt</title>';
+		echo '<title>T-VORE - Fin de commande</title>';
 		echo '<link rel="icon" href="images/favicon.ico">';
 		echo '<link rel="shortcut icon" href="images/favicon.ico" />';
 		echo '<link rel="stylesheet" href="css/boutique.css">';
@@ -53,72 +53,32 @@ echo '<html>';
 	  $IdClient = $_SESSION["client"];
       $db=mysql_connect("localhost","root","admin") or die("erreur de connection".mysql_error());		/*connection au serveur MySQL*/
    	  mysql_select_db("TVORE",$db) or die("Erreur de connection à la base T-VORE");		/*ouverture de la base TVORE*/
-   	?>
+
+	  $requete = "UPDATE reftshirt r
+	              INNER JOIN panier AS p ON p.numRef = r.numRef AND p.IdClient = $IdClient
+	              SET r.stock = r.stock - 1";
+	  $resultat = mysql_query($requete) or die("erreur requete");
+
+	  $requete = "DELETE FROM panier WHERE IdClient = $IdClient";
+	  $resultat = mysql_query($requete) or die("erreur requete");
+
+	  mysql_close($db); /*fermeture de MySQL*/
+    ?>
+
 		<div id="page2" class="content" id="personnel">
 			<div class="container_12">
 				<div class="grid_12">
 					<div class="slogan">
-						<h3>Votre panier</h3>
-						<?php
-						  $IdClient = $_SESSION["client"];
-						  if (isset($_POST['ajoutPanier']))
-						  {
-						  	$numRef = $_POST['ref'];
-						    mysql_query("INSERT INTO panier (IdClient, numRef) VALUES ($IdClient, $numRef)") or die("erreur requete");
-						  }
-						  $requete = "SELECT p.numRef, r.stock, t.nomTshirt, t.prix, c.libelleCouleur, ta.libelleTaille
-						              FROM panier AS p
-						              INNER JOIN reftshirt AS r ON r.numRef = p.numRef
-						              INNER JOIN tshirt AS t ON t.numTshirt = r.numTshirt
-						              INNER JOIN couleur AS c ON c.numCouleur = r.numCouleur
-						              INNER JOIN taille AS ta ON ta.numTaille = r.numTaille
-						              WHERE p.IdClient = $IdClient
-						              ORDER BY t.nomTshirt, c.libelleCouleur, ta.numTaille";
-						  $resultat = mysql_query($requete) or die("erreur requete");
-						  echo "<table>
-						          <tr class='refCol'><th>Référence</th><th>Nom</th><th>Couleur</th><th>Taille</th><th>Prix</th></tr>
-						       ";
-							while ($ligne=mysql_fetch_assoc($resultat)) 
-							{
-								$numRef=$ligne["numRef"];
-								$nomTshirt=utf8_encode($ligne["nomTshirt"]);
-								$libelleCouleur=$ligne["libelleCouleur"];
-								$libelleTaille=$ligne["libelleTaille"];
-								$prix=$ligne["prix"];
-							    echo '<tr><td class="refCol2"><a href="?ref='.$numRef.'">'.$numRef.'</a></td><td>'.$nomTshirt.'</td><td>'.$libelleCouleur.'</td><td>'.$libelleTaille.'</td><td>'.$prix.'</td></tr>
-							         ';
-						  	}
-						  	echo "</table>
-						  	     ";
-
-						  $requete = "SELECT SUM(t.prix) AS total
-						              FROM panier AS p
-						              INNER JOIN reftshirt AS r ON r.numRef = p.numRef
-						              INNER JOIN tshirt AS t ON t.numTshirt = r.numTshirt
-						              WHERE p.IdClient = $IdClient";
-						  $resultat = mysql_query($requete) or die("erreur requete");
-							while ($ligne=mysql_fetch_assoc($resultat)) 
-							{
-								$total=$ligne["total"];
-							    echo "<h2>Prix total : $total</h2>";
-						  	}
-
-							echo '<div>
-							        <form method="post" action="finCommande.php">
-							          <input type="submit" value="Valider la commande" name="valider" class="validDev">
-							        </form>
-							      </div>';
-
-                     	  mysql_close($db); /*fermeture de MySQL*/
-
-						?>
+						<h3>Votre commande a été prise en compte</h3>
 						
+						<p>Nous vous remercions d'avoir effectué vos achats sur T-VORE ! <a href="index.php">Retourner à l'acceuil</a></p>
+
 					</div>
-				</div>
-				
-				
+				</div>	
 			</div>
 		</div>
+
+
 
 		<footer>
 			<div class="container_12">
