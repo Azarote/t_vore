@@ -60,6 +60,10 @@ echo '<html>';
 					<div class="slogan">
 						<h3>Votre panier</h3>
 						<?php
+						if (empty($_SESSION['admin'])) {
+							echo "Vous n'êtes pas connecté à votre compte. <a href='connect/index.html'>Connectez vous ici</a>";
+						}
+						else {
 						  $IdClient = $_SESSION["client"];
 						  if (isset($_POST['ajoutPanier']))
 						  {
@@ -110,7 +114,7 @@ echo '<html>';
 							      </div>';
 
                      	  mysql_close($db); /*fermeture de MySQL*/
-
+                     	  }
 						?>
 						
 					</div>
