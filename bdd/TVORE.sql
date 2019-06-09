@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  Dim 26 mai 2019 à 21:01
+-- Généré le :  lun. 27 mai 2019 à 15:07
 -- Version du serveur :  10.1.28-MariaDB
 -- Version de PHP :  5.6.32
 
@@ -21,18 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `tvore`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `avoir`
---
-
-CREATE TABLE `avoir` (
-  `IdAvoir` int(11) NOT NULL DEFAULT '0',
-  `NumTaille` int(11) NOT NULL DEFAULT '0',
-  `Numcouleur` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -57,7 +45,8 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`IdClient`, `NomClient`, `PrenomClient`, `adresseclient`, `CpClient`, `Villeclient`, `TelClient`, `MailClient`, `MdpClient`) VALUES
-(1, 'Terrisse', 'JudicaÃ«l', '41 rue Lacoste', 13129, 'Salin de Giraud ', 4051247, 'judcael@lesterrisse.com', '46771d1f432b42343f56f791422a4991');
+(1, 'Terrisse', 'JudicaÃ«l', '41 rue Lacoste', 13129, 'Salin de Giraud ', 4051247, 'judcael@lesterrisse.com', '46771d1f432b42343f56f791422a4991'),
+(2, 'Munoz', 'Matteo', '123 Place des fourmis', 13230, 'Port St Louis', 695362653, 'matteomunoz4@gmail.com', '25f9e794323b453885f5181f1b624d0b');
 
 -- --------------------------------------------------------
 
@@ -266,7 +255,8 @@ INSERT INTO `photo` (`numPhoto`, `numTshirt`, `numCouleur`, `cheminImage`, `parD
 (262, 134, 0, 'goodies/sac.jpg', 1),
 (263, 135, 0, 'goodies/sacSport.jpg', 1),
 (264, 136, 0, 'goodies/sacTotoro.jpg', 1),
-(265, 137, 0, 'goodies/tapis.jpg', 1);
+(265, 137, 0, 'goodies/tapis.jpg', 1),
+(266, 137, 2, 'photos/nouveau/', 0);
 
 -- --------------------------------------------------------
 
@@ -304,7 +294,7 @@ INSERT INTO `reftshirt` (`numRef`, `numTshirt`, `numCouleur`, `numTaille`, `parD
 (14, 27, 6, 3, 0, 13),
 (15, 29, 5, 3, 0, 19),
 (16, 29, 3, 3, 0, 28),
-(17, 29, 6, 3, 0, 28),
+(17, 29, 6, 3, 0, 27),
 (18, 35, 9, 3, 0, 26),
 (19, 35, 4, 3, 0, 18),
 (20, 41, 3, 3, 0, 6),
@@ -409,7 +399,7 @@ INSERT INTO `reftshirt` (`numRef`, `numTshirt`, `numCouleur`, `numTaille`, `parD
 (639, 15, 4, 7, 0, 10),
 (640, 15, 4, 8, 0, 16),
 (641, 17, 2, 1, 0, 22),
-(642, 17, 2, 2, 1, 9),
+(642, 17, 2, 2, 1, 8),
 (643, 17, 2, 4, 0, 23),
 (644, 17, 2, 5, 0, 8),
 (645, 17, 2, 6, 0, 15),
@@ -887,19 +877,14 @@ INSERT INTO `tshirt` (`numTshirt`, `nomtshirt`, `prix`, `genre`) VALUES
 (134, 'Sac étudiant', '19.99', 0),
 (135, 'Sac de sport', '24.99', 0),
 (136, 'Sac Totoro', '9.99', 0),
-(137, 'Tapis de Souris Ramen', '9.99', 0);
+(137, 'Tapis de Souris Ramen', '9.99', 0),
+(138, 'Loreal', '15.00', 1),
+(139, '', '0.00', 0),
+(141, 'hhgh', '0.00', 0);
 
 --
 -- Index pour les tables déchargées
 --
-
---
--- Index pour la table `avoir`
---
-ALTER TABLE `avoir`
-  ADD PRIMARY KEY (`IdAvoir`,`NumTaille`,`Numcouleur`),
-  ADD KEY `Numcouleur` (`Numcouleur`),
-  ADD KEY `NumTaille` (`NumTaille`);
 
 --
 -- Index pour la table `client`
@@ -961,7 +946,7 @@ ALTER TABLE `tshirt`
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `IdClient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdClient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `couleur`
@@ -973,7 +958,7 @@ ALTER TABLE `couleur`
 -- AUTO_INCREMENT pour la table `photo`
 --
 ALTER TABLE `photo`
-  MODIFY `numPhoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=266;
+  MODIFY `numPhoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=267;
 
 --
 -- AUTO_INCREMENT pour la table `reftshirt`
@@ -991,7 +976,7 @@ ALTER TABLE `taille`
 -- AUTO_INCREMENT pour la table `tshirt`
 --
 ALTER TABLE `tshirt`
-  MODIFY `numTshirt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
+  MODIFY `numTshirt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 
 --
 -- Contraintes pour les tables déchargées

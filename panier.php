@@ -38,6 +38,7 @@ echo '<html>';
 								}
 								?>
 								<li class="men4"><a  href="index.php #page4">Nous Contacter</a> <strong class="hover"></strong></li>
+								<li class="men5"><a  href="panier.php">Votre Panier</a> <strong class="hover"></strong></li>
 							</ul>
 							</ul>
 						</nav>
@@ -59,6 +60,10 @@ echo '<html>';
 					<div class="slogan">
 						<h3>Votre panier</h3>
 						<?php
+						if (empty($_SESSION['admin'])) {
+							echo "Vous n'êtes pas connecté à votre compte. <a href='connect/index.html'>Connectez vous ici</a>";
+						}
+						else {
 						  $IdClient = $_SESSION["client"];
 						  if (isset($_POST['ajoutPanier']))
 						  {
@@ -109,7 +114,7 @@ echo '<html>';
 							      </div>';
 
                      	  mysql_close($db); /*fermeture de MySQL*/
-
+                     	  }
 						?>
 						
 					</div>
